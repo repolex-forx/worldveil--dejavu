@@ -8,7 +8,7 @@
     {
       "@id": "https://repolex.ai/r/worldveil/dejavu/commit/e56a4a221ad204654a191d217f92aebf3f058b62",
       "git:hexsha": "e56a4a221ad204654a191d217f92aebf3f058b62",
-      "repolex:parseStatus": "metadata_complete"
+      "repolex:parseStatus": "ast_complete"
     }
   ]
 }
