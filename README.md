@@ -1,1 +1,126 @@
-Initializing
+# Repolex Knowledge Graph of worldveil/dejavu
+
+RDF knowledge graph data for [worldveil/dejavu](https://github.com/worldveil/dejavu), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download worldveil/dejavu
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── e56a4a221ad204654a191d217f92aebf3f058b62
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── e56a4a221ad204654a191d217f92aebf3f058b62
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 00eae947af2cd6a7d98a36ea856a188f9fb5040e.nq.gz
+│   ├── 0e20569e8000af2dce2f65e5cf3808f9a04287b5.nq.gz
+│   ├── 19cc2b90175366509ffa0484171699746e255054.nq.gz
+│   ├── 19cdf15df99f4b6bc393319cbef001b474dec1a3.nq.gz
+│   ├── 1a8c506de6086d73139853aef6d6db712bf144d4.nq.gz
+│   ├── 279b5142a762c807805f1e9c34cf76d0e8ebe2c0.nq.gz
+│   ├── 308126ec665395641906b011d403f353f846f6aa.nq.gz
+│   ├── 33db2b2c48308c15faeb5268bb6bf40c308135a1.nq.gz
+│   ├── 34043fdab874568972aaf1d6094389b01dd4456f.nq.gz
+│   ├── 34161ac22a43f84718e7292e0e73665c08348cb7.nq.gz
+│   ├── 3bfef0d46dcd57b1c6917b0f6690243f3fb576ea.nq.gz
+│   ├── 4ac7131be17f1ce1c9a38ac569564a4a60353fdb.nq.gz
+│   ├── 5daac25719adff8b1cb9633d494da50e1183b779.nq.gz
+│   ├── 5f3220706a00d858c7fcd16378e9b7e4704cc2b1.nq.gz
+│   ├── 63fd81f7b44232da7d00cfcee71d2acb3dfec6b5.nq.gz
+│   ├── 6a5eda9f40d6afb969c768789c547321f4667cf2.nq.gz
+│   ├── 6ca33748ce6611da652f620b821ade7028918308.nq.gz
+│   ├── 6eecda24573296c486e6d150c53525a3e1a4e2db.nq.gz
+│   ├── 6f30d7270326949147b414bde793bca1fd2a87a5.nq.gz
+│   ├── 7cbfdc798c0360cc7a2dd05abebf98cbb84f8374.nq.gz
+│   ├── 839a72a0cd2972f7e73a0758b33812817beb86c5.nq.gz
+│   ├── 8f8bc7e44777ecb131176320f7aad7bbc9f4fa33.nq.gz
+│   ├── 906f4265060861d956f3b436ac45bfc7d2481fb4.nq.gz
+│   ├── 92613883666ee86358331a50af33a4689df7078d.nq.gz
+│   ├── 9bad0ecbd757403bc02ddbbca2068367ce28496c.nq.gz
+│   ├── 9c5ab1a0e2ed831e937fc07fd2b5c6fa7aa892a2.nq.gz
+│   ├── ad1d336d2beb362741f0b085502d539956dbdfc6.nq.gz
+│   ├── b104120f807a89d3b6810d9b80d2140aa89a8b2f.nq.gz
+│   ├── c0f474920f992333f4aa5f1b3a5de01e168e8d93.nq.gz
+│   ├── c3089aa52580bcd150a68edaaa95a3219bef1183.nq.gz
+│   ├── c74f37b591662532b6e675c837b38138a2dd0df1.nq.gz
+│   ├── ca9e52c5edb2774cb44ac4d6a6d07371056686d5.nq.gz
+│   ├── ccafa2629b6d4d770227e9fed1780fc4f3de1444.nq.gz
+│   ├── cd0f853501d9b26db668036a4f9408efe2502e38.nq.gz
+│   ├── cd9572e18f9d3af85d0cf1c0a2407d5cb482d0e9.nq.gz
+│   ├── d795f687f4385770124624aa9dc2f9f45cda2553.nq.gz
+│   ├── d7b6df545cec806f535cc81e9cfd771b9e436fd7.nq.gz
+│   ├── d91b5f3c83814f03c9de3f961b1167d860184ba6.nq.gz
+│   ├── dd045cebb218e8f0c691625d793786975d80d6a0.nq.gz
+│   ├── ded965039b36fa57e74b06107298112034e78c9c.nq.gz
+│   ├── e1611927ad196a3d64b477995772b477086051e3.nq.gz
+│   ├── e69de29bb2d1d6434b8b29ae775ad8c2e48c5391.nq.gz
+│   ├── e884285b6adff6701a8eb3cea5132870cdca1ac2.nq.gz
+│   ├── ef283c598662e8880558977c1d0a861d0947f0dc.nq.gz
+│   ├── f9bd1455b374de796e12d240c1211dee9829d97e.nq.gz
+│   ├── fac72bc5d57c4e5018f5c9b35e6cb437cc03a8d5.nq.gz
+│   └── fe8837c25f031ab1ce06b29052760da28efcff50.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── e56a4a221ad204654a191d217f92aebf3f058b62.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 55 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[worldveil/dejavu](https://github.com/worldveil/dejavu)
+
+---
+*Parsed on 2026-10-18 by [repolex](https://repolex.ai)*
